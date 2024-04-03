@@ -6,8 +6,22 @@ const ServiceCard = () => {
 			<div className="servcard-title">List</div>
 			<div className="servcard-image">Image Container</div>
 			<div className="servcard-footer">
-				<div className="servcard-desc">Description</div>
-				<div className="servcard-btns">__ __ __ __ __ __</div>
+				<div className="servcard-desc">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+					enim ad minim veniam, quis nostrud exercitation ullamco laboris
+					nisi ut aliquip ex ea commodo consequat.{" "}
+				</div>
+				<div className="servcard-btns">
+					<div className="progress-line"></div>
+					<div className="progress-line"></div>
+					<div className="progress-line"></div>
+					<div className="progress-line"></div>
+					<div className="progress-line"></div>
+					<div className="progress-line"></div>
+					<div className="progress-line"></div>
+					<div className="progress-line"></div>
+				</div>
 			</div>
 		</section>
 	);
