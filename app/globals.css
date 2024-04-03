@@ -3,31 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+	min-width: 400px;
+	min-height: 650px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@layer base {
+	body {
+		@apply border-4 border-solid border-red-600
+		flex flex-col justify-center items-center;
+	}
+}
+
+@layer components {
+	.main-container {
+		@apply border-4 border-solid border-blue-600
+		flex flex-col justify-start items-center
+		w-full h-full;
+	}
+}
+
+/* Mobile Nav Styling */
+@layer components {
+	.mobile-nav-container {
+		@apply border-2 border-solid border-yellow-600
+		bg-slate-800
+		flex flex-row justify-between items-center
+		w-full h-fit
+		p-2;
+	}
+
+	.mobile-nav-logo {
+		@apply border-2 border-solid border-purple-600
+		flex justify-center items-center
+		relative
+		w-[150px] h-[80px];
+	}
+
+	.mobile-nav-menu-container {
+		@apply border-2 border-solid border-orange-600
+		flex justify-center items-center
+		relative
+		text-white
+		w-[70px] h-[70px];
+	}
+
+	.mobile-nav-modal {
+		@apply border-2 border-solid border-yellow-600
+		flex flex-col justify-center items-center
+		w-full h-full
+		bg-slate-700
+		text-white
+		text-5xl
+		relative
+		gap-12;
+	}
 }
