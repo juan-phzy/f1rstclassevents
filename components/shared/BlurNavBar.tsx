@@ -7,32 +7,43 @@ import NavModal from "./NavModal";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const NavBar = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const BlurNavBar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
-	const modalRef = useRef(null); // Add a ref to your modal
+	const blurmodalRef = useRef(null); // Add a ref to your modal
+
+	const blurNavRef = useRef(null);
 
 	useGSAP(() => {
 		// Initial setup for the modal - hidden by default
-		gsap.set(modalRef.current, { autoAlpha: 0 });
+		gsap.set(blurmodalRef.current, { autoAlpha: 0 });
 
-		gsap.to(".nav-container", {
+		const blurNav = blurNavRef.current;
+		gsap.from(blurNav, {
 			autoAlpha: 0,
-			duration: 0.5,
+			y: -100,
+			duration: 1,
 			scrollTrigger: {
 				trigger: ".nav-container", // Reference the regular NavBar's class
 				start: "bottom top", // Start the animation when the bottom of the NavBar hits the top of the viewport
 				toggleActions: "play none reverse reset",
 				markers: true,
+				scrub: 1,
+				onUpdate: (self) => {
+					console.log("progress:", self.progress.toFixed(3));
+				},
 			},
 		});
 	}, []);
 
 	useGSAP(() => {
 		if (menuOpen) {
-			gsap.to(modalRef.current, { autoAlpha: 1, duration: 0.5 });
+			gsap.to(blurmodalRef.current, { autoAlpha: 1, duration: 0.5 });
 		} else {
-			gsap.to(modalRef.current, { autoAlpha: 0, duration: 0.5 });
+			gsap.to(blurmodalRef.current, { autoAlpha: 0, duration: 0.5 });
 		}
 		// Animation for menu open/close icon
 		gsap.to(".mobile-menu-open", {
@@ -48,7 +59,7 @@ const NavBar = () => {
 
 	return (
 		<>
-			<section className="nav-container">
+			<section ref={blurNavRef} className="blur-nav-container">
 				<div className="nav-logo">
 					<Image
 						className="object-contain"
@@ -80,9 +91,9 @@ const NavBar = () => {
 					/>
 				</button>
 			</section>
-			<NavModal ref={modalRef} open={menuOpen} />
+			<NavModal ref={blurmodalRef} open={menuOpen} />
 		</>
 	);
 };
 
-export default NavBar;
+export default BlurNavBar;

@@ -30,32 +30,58 @@ body {
 		flex flex-col justify-start items-center
 		relative
 		w-full h-full;
+		min-width: 400px;
+		min-height: 650px;
 	}
 }
 
-/* Mobile Nav Styling */
+/* Nav Styling */
 @layer components {
-	.mobile-nav-container {
+	.blur-nav-container {
+		@apply /* border-2 border-solid border-yellow-600 */
+		flex flex-row justify-between items-center
+		bg-slate-800/60
+		w-[97%] h-fit
+		rounded-3xl
+		fixed
+		top-5
+		ml-auto
+		mr-auto
+		px-4
+		z-50;
+		backdrop-filter: blur(8px);
+	}
+	.nav-container {
 		@apply /* border-2 border-solid border-yellow-600 */
 		bg-slate-800
 		flex flex-row justify-between items-center
 		w-full h-fit
-		z-20;
+		px-4
+		z-50;
 	}
-
-	.mobile-nav-logo {
+	.nav-logo {
 		@apply /* border-2 border-solid border-purple-600 */
 		flex justify-center items-center
 		relative
 		w-[150px] h-[80px];
 	}
-
+	.nav-link-container {
+		@apply /* border-2 border-solid border-white */
+		w-fit h-full
+		text-white
+		text-2xl
+		gap-6
+		max-[768px]:hidden
+		md:flex flex-row justify-center items-center;
+	}
 	.mobile-nav-menu-container {
 		@apply /* border-2 border-solid border-orange-600 */
 		flex justify-center items-center
 		relative
 		text-white
-		w-[80px] h-[80px];
+		w-[80px] h-[80px]
+		
+		md:hidden;
 	}
 
 	.mobile-nav-modal {
@@ -66,7 +92,8 @@ body {
 		bg-slate-700
 		text-white
 		text-5xl
-		gap-12;
+		gap-12
+		z-40;
 	}
 }
 
@@ -82,6 +109,8 @@ body {
 		text-center
 		text-white;
 		height: calc(100vh - 80px);
+		min-width: 400px;
+		min-height: 650px;
 	}
 	.hero-title {
 		@apply border-2 border-solid border-white
@@ -123,24 +152,23 @@ body {
 		@apply border-2 border-solid border-red-400
 		flex flex-col justify-start items-center
 		w-full h-full
-		gap-4;
+		gap-2;
 	}
 	.services-header {
 		@apply border-2 border-solid border-blue-300
 		flex flex-row justify-center items-center
 		w-full h-fit
-		py-10
+		py-2
 		text-4xl;
 	}
-	.services-title,
-	.services-list {
+	.services-title {
 		@apply flex justify-center items-center
-		w-1/2 h-fit;
+		w-full h-fit;
 	}
 	.services-card {
 		@apply border-2 border-solid border-white
 		flex justify-center items-center
-		p-10
+		p-4
 		w-full h-full;
 	}
 }
@@ -154,20 +182,32 @@ body {
 		gap-2
 		relative
 		bg-amber-950
-		p-4;
+		p-2;
+	}
+	.servcard-title {
+		@apply flex justify-center items-center
+		w-full h-fit
+		relative
+		text-2xl;
 	}
 	.servcard-image {
 		@apply border-2 border-solid border-black
 		flex justify-center items-center
 		relative
-		w-full h-[300px];
+		w-full h-[400px];
+	}
+	.servcard-footer {
+		@apply border-2 border-solid border-red-600
+		flex flex-col justify-between items-center
+		w-full h-full
+		relative;
 	}
 	.servcard-desc {
 		@apply border-2 border-solid border-white
 		relative
 		w-full h-fit;
 	}
-	.servard-buttons {
+	.servcard-btns {
 		@apply border-2 border-solid border-white
 		flex flex-row justify-between items-center
 		w-full h-fit;

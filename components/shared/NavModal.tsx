@@ -1,15 +1,9 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { forwardRef, Ref } from "react";
+import { forwardRef, Ref, useState } from "react";
 
-const NavModal = forwardRef<HTMLDivElement, {}>((props, ref) => {
-	useGSAP(() => {
-		gsap.fromTo(
-			".mobile-nav-modal",
-			{ autoAlpha: 0 },
-			{ autoAlpha: 1, duration: 0.5 }
-		);
-	}, []);
+const NavModal = forwardRef<HTMLDivElement, { open: boolean }>((props, ref) => {
+	const [menuOpen, setMenuOpen] = useState(props.open);
 
 	return (
 		<section ref={ref as Ref<HTMLDivElement>} className="mobile-nav-modal">

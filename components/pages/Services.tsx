@@ -14,7 +14,6 @@ const Services = () => {
 			<div className="services-content z-20">
 				<div className="services-header">
 					<div className="services-title">Services</div>
-					<div className="services-list">List</div>
 				</div>
 				<div className="services-card">
 					<ServiceCard />

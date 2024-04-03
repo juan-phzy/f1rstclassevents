@@ -1,10 +1,12 @@
 import HeroPage from "@/components/pages/HeroPage";
 import Services from "@/components/pages/Services";
+import BlurNavBar from "@/components/shared/BlurNavBar";
 import NavBar from "@/components/shared/NavBar";
 
 export default function Home() {
 	return (
 		<main className="main-container">
+			<BlurNavBar />
 			<NavBar />
 			<HeroPage />
 			<Services />
