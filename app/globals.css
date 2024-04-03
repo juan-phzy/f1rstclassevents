@@ -18,14 +18,14 @@ body {
 
 @layer base {
 	body {
-		@apply border-4 border-solid border-red-600
+		@apply /* border-4 border-solid border-red-600 */
 		flex flex-col justify-center items-center;
 	}
 }
 
 @layer components {
 	.main-container {
-		@apply border-4 border-solid border-blue-600
+		@apply /* border-4 border-solid border-blue-600 */
 		flex flex-col justify-start items-center
 		w-full h-full;
 	}
@@ -34,36 +34,69 @@ body {
 /* Mobile Nav Styling */
 @layer components {
 	.mobile-nav-container {
-		@apply border-2 border-solid border-yellow-600
+		@apply /* border-2 border-solid border-yellow-600 */
 		bg-slate-800
 		flex flex-row justify-between items-center
 		w-full h-fit
-		p-2;
+		z-20;
 	}
 
 	.mobile-nav-logo {
-		@apply border-2 border-solid border-purple-600
+		@apply /* border-2 border-solid border-purple-600 */
 		flex justify-center items-center
 		relative
 		w-[150px] h-[80px];
 	}
 
 	.mobile-nav-menu-container {
-		@apply border-2 border-solid border-orange-600
+		@apply /* border-2 border-solid border-orange-600 */
 		flex justify-center items-center
 		relative
 		text-white
-		w-[70px] h-[70px];
+		w-[80px] h-[80px];
 	}
 
 	.mobile-nav-modal {
 		@apply border-2 border-solid border-yellow-600
 		flex flex-col justify-center items-center
+		fixed
 		w-full h-full
 		bg-slate-700
 		text-white
 		text-5xl
-		relative
 		gap-12;
+	}
+}
+
+/* Hero Page */
+@layer components {
+	.hero-container {
+		@apply border-2 border-solid border-red-500
+		flex flex-col justify-center items-center
+		gap-4
+		w-full
+		shrink-0
+		bg-slate-900
+		text-center
+		text-white;
+		height: calc(100vh - 80px);
+	}
+	.hero-title {
+		@apply border-2 border-solid border-white
+		flex flex-col justify-center items-center
+		text-4xl
+		w-full h-fit;
+	}
+	.hero-3d {
+		@apply border-2 border-solid border-white
+		flex justify-center items-center
+		text-5xl
+		w-full h-[65%];
+	}
+	.hero-text {
+		@apply border-2 border-solid border-white
+		flex flex-col justify-center items-center
+		text-2xl
+		w-full h-fit;
 	}
 }
