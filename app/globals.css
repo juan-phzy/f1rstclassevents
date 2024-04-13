@@ -136,7 +136,7 @@ body {
     md:flex-row;
 
 		width: 100%;
-		height: calc((100vh) - (80px));
+		height: calc(100vh - 80px);
 		min-width: 400px;
 		min-height: 650px;
 	}
