@@ -154,7 +154,7 @@ body {
 		@apply border-[1px] border-dashed border-white/50
 		flex justify-center items-center
 		text-5xl
-		w-full h-[35%];
+		w-full h-[50%];
 	}
 	.hero-text {
 		@apply border-[1px] border-dashed border-white/50
