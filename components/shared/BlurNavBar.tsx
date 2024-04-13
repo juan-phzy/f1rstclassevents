@@ -39,7 +39,6 @@ const BlurNavBar = () => {
 				toggleActions: "play none reverse reset",
 				scrub: 1,
 				markers: true,
-				scroller: ".main-container",
 			},
 		});
 	}, [isMounted]);

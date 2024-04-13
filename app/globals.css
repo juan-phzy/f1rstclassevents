@@ -52,8 +52,7 @@ body {
 		@apply /* border-4 border-solid border-blue-600 */
 		flex flex-col justify-start items-center
 		relative
-		w-full h-full
-    overflow-y-scroll;
+		w-full h-fit;
 		min-width: 400px;
 		min-height: 650px;
 	}

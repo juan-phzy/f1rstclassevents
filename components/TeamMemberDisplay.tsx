@@ -22,7 +22,6 @@ const TeamMemberDisplay = () => {
 				markers: true,
 				pin: ".team-container",
 				pinSpacing: true,
-				scroller: ".main-container",
 			},
 		});
 	}, []);
