@@ -350,4 +350,58 @@ body {
     md:text-4xl
     lg:text-5xl;
 	}
+	.team-body {
+		@apply border-2 border-pink-600 border-solid
+    flex justify-center items-center
+    relative
+    w-full h-[80%]
+    max-w-[1000px];
+	}
+}
+
+/* Team Member Display */
+@layer components {
+	.team-display-container {
+		@apply border-2 border-solid border-white
+    flex flex-col justify-center items-center
+    w-full h-full
+    gap-4;
+	}
+	.member-name-container {
+		@apply border-2 border-dotted border-blue-400;
+	}
+	.member-name {
+		@apply border-[1px] border-solid border-pink-400
+    text-6xl;
+	}
+	.member-description {
+		@apply border-2 border-solid border-white
+    flex justify-center items-center
+    w-1/2 h-fit;
+	}
+}
+
+/* Bookings Page */
+@layer components {
+	.booking-container {
+		@apply border-4 border-solid border-white
+    flex justify-center items-center
+    shrink-0
+		bg-purple-900
+		text-white
+		relative
+		p-2
+		w-full h-screen
+    
+    md:p-6;
+		min-width: 400px;
+		min-height: 650px;
+	}
+	.booking-content {
+		@apply border-4 border-dotted border-red-300
+    flex flex-col justify-center items-center
+    w-full h-full
+    max-w-[1300px]
+    gap-8;
+	}
 }

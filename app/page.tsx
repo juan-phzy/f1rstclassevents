@@ -1,4 +1,5 @@
 import Loading from "@/components/Loading";
+import BookingsPage from "@/components/pages/BookingsPage";
 import HeroPage from "@/components/pages/HeroPage";
 import Services from "@/components/pages/Services";
 import TeamPage from "@/components/pages/TeamPage";
@@ -8,11 +9,12 @@ import NavBar from "@/components/shared/NavBar";
 export default function Home() {
 	return (
 		<main className="main-container">
-			{/* <BlurNavBar /> */}
+			<BlurNavBar />
 			<NavBar />
 			<HeroPage />
 			<Services />
 			<TeamPage />
+			<BookingsPage />
 		</main>
 	);
 }

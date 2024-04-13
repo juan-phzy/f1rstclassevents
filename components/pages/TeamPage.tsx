@@ -1,3 +1,5 @@
+import TeamMemberDisplay from "../TeamMemberDisplay";
+
 const TeamPage = () => {
 	return (
 		<section className="team-container">
@@ -8,11 +10,7 @@ const TeamPage = () => {
 					<span>Team</span>
 				</div>
 				<div className="team-body">
-					<div>Sriv</div>
-					<div>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-						do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</div>
+					<TeamMemberDisplay />
 				</div>
 			</div>
 		</section>
