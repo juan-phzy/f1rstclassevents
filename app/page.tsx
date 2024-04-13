@@ -12,7 +12,7 @@ export default function Home() {
 			<NavBar />
 			<HeroPage />
 			<Services />
-			{/* <TeamPage /> */}
+			<TeamPage />
 		</main>
 	);
 }
