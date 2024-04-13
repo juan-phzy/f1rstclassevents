@@ -11,15 +11,31 @@ const Services = () => {
 				alt="services image"
 				fill
 			/> */}
+
 			<div className="services-bg z-10"></div>
+
 			<div className="services-content z-20">
-				<div className="services-header">
-					<div className="services-title">Services</div>
-				</div>
+				<div className="services-header">Services</div>
 				<div className="services-card">
-					<BsChevronLeft size={60} />
+					<div className="services-grid">
+						<div className="sgrid-item">Weddings</div>
+						<div className="sgrid-item">Birthdays</div>
+						<div className="sgrid-item">Nightlife</div>
+						<div className="sgrid-item">Corporate</div>
+						<div className="sgrid-item">DJ Mixing</div>
+						<div className="sgrid-item">MC Hosting</div>
+						<div className="sgrid-item">Pro Audio</div>
+					</div>
+
+					<button className="services-arrow">
+						<BsChevronLeft className="w-full h-full" />
+					</button>
+
 					<ServiceCard />
-					<BsChevronRight size={60} />
+
+					<button className="services-arrow">
+						<BsChevronRight className="w-full h-full" />
+					</button>
 				</div>
 			</div>
 		</section>
