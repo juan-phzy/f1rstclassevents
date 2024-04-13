@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import NavModal from "./NavModal";
 
@@ -13,33 +14,39 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BlurNavBar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
-	const blurmodalRef = useRef(null); // Add a ref to your modal
+	const [isMounted, setIsMounted] = useState(false); // New state to track mounting
 
+	const blurmodalRef = useRef(null);
 	const blurNavRef = useRef(null);
 
+	useEffect(() => {
+		setIsMounted(true); // Set isMounted to true when component mounts
+	}, []);
+
 	useGSAP(() => {
+		if (!isMounted) return;
 		// Initial setup for the modal - hidden by default
 		gsap.set(blurmodalRef.current, { autoAlpha: 0 });
+		gsap.set(blurNavRef.current, { y: -100, autoAlpha: 0 });
 
-		const blurNav = blurNavRef.current;
-		gsap.from(blurNav, {
-			autoAlpha: 0,
-			y: -100,
+		gsap.to(blurNavRef.current, {
+			autoAlpha: 1,
+			y: 0,
 			duration: 1,
 			scrollTrigger: {
 				trigger: ".nav-container", // Reference the regular NavBar's class
 				start: "bottom top", // Start the animation when the bottom of the NavBar hits the top of the viewport
 				toggleActions: "play none reverse reset",
-				markers: true,
 				scrub: 1,
-				onUpdate: (self) => {
-					console.log("progress:", self.progress.toFixed(3));
-				},
+				markers: true,
+				scroller: ".main-container",
 			},
 		});
-	}, []);
+	}, [isMounted]);
 
 	useGSAP(() => {
+		if (!isMounted) return;
+
 		if (menuOpen) {
 			gsap.to(blurmodalRef.current, { autoAlpha: 1, duration: 0.5 });
 		} else {
@@ -55,7 +62,11 @@ const BlurNavBar = () => {
 			duration: 0.5,
 			autoAlpha: menuOpen ? 1 : 0,
 		});
-	}, [menuOpen]);
+	}, [menuOpen, isMounted]);
+
+	if (!isMounted) {
+		return null; // Return null while component has not mounted
+	}
 
 	return (
 		<>

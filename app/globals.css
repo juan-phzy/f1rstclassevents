@@ -3,12 +3,34 @@
 @tailwind utilities;
 
 :root {
+	/* This styles the scrollbar track */
+	::-webkit-scrollbar-track {
+		background: #505050; /* Track background */
+	}
+
+	/* This styles the scrollbar itself */
+	::-webkit-scrollbar {
+		width: 10px; /* Width of the scrollbar */
+		height: 5px; /* Height of the scrollbar for horizontal scrolls */
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #d2d2d2; /* Handle color */
+		border-radius: 5px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #fff; /* Handle color on hover */
+	}
 }
 
 html,
 body {
 	margin: 0;
 	padding: 0;
+	position: relative;
 	box-sizing: border-box;
 	width: 100vw;
 	height: 100vh;
@@ -30,7 +52,8 @@ body {
 		@apply /* border-4 border-solid border-blue-600 */
 		flex flex-col justify-start items-center
 		relative
-		w-full h-full;
+		w-full h-full
+    overflow-y-scroll;
 		min-width: 400px;
 		min-height: 650px;
 	}
@@ -86,7 +109,7 @@ body {
 	}
 
 	.mobile-nav-modal {
-		@apply border-2 border-solid border-yellow-600
+		@apply /* border-2 border-solid border-yellow-600 */
 		flex flex-col justify-center items-center
 		fixed
 		w-full h-full
@@ -104,26 +127,34 @@ body {
 		@apply /* border-2 border-solid border-red-500 */
 		flex flex-col justify-center items-center
 		gap-4
-		w-full
-		shrink-0
 		bg-slate-900
 		text-center
-		text-white;
-		height: calc(100vh - 80px);
+		text-white
+    p-2
+    
+    md:p-6
+    md:flex-row;
+
+		width: 100%;
+		height: calc((100vh) - (80px));
 		min-width: 400px;
 		min-height: 650px;
 	}
 	.hero-title {
 		@apply border-[1px] border-dashed border-white/50
 		flex flex-col justify-center items-center
-		text-4xl
-		w-full h-fit;
+		text-3xl
+		w-full h-fit
+    
+    md:items-start
+    md:text-4xl
+    lg:text-5xl;
 	}
 	.hero-3d {
 		@apply border-[1px] border-dashed border-white/50
 		flex justify-center items-center
 		text-5xl
-		w-full h-[65%];
+		w-full h-[35%];
 	}
 	.hero-text {
 		@apply border-[1px] border-dashed border-white/50
@@ -131,18 +162,31 @@ body {
 		text-2xl
 		w-full h-fit;
 	}
+	.hero-text-lg {
+		@apply border-[1px] border-dashed border-white/90
+		w-full h-fit
+		text-2xl
+    hidden
+
+    md:flex 
+    md:flex-row 
+    md:justify-start 
+    md:items-start;
+	}
 }
 
 /* Service Page */
 @layer components {
 	.services-container {
-		@apply /* border-2 border-solid border-yellow-500 */
+		@apply border-4 border-solid border-yellow-500
 		flex flex-col justify-center items-center
+    relative
+    w-full h-screen
+    shrink-0
 		bg-amber-800
-		text-white
-		relative
-		shrink-0
-		w-full h-screen;
+		text-white;
+
+		height: 100vh;
 		min-width: 400px;
 		min-height: 650px;
 	}
@@ -153,7 +197,7 @@ body {
 		top-0 left-0;
 	}
 	.services-content {
-		@apply /* border-2 border-solid border-red-400 */
+		@apply border-2 border-solid border-red-600
 		flex flex-col justify-center items-center
 		w-full h-full
 		gap-2;
@@ -200,7 +244,7 @@ body {
 		flex justify-center items-center
 		relative
 		shrink-0
-		w-full h-[250px];
+		w-[200px] h-[200px];
 	}
 	.servcard-footer {
 		@apply /* border-2 border-solid border-red-600 */
@@ -225,5 +269,26 @@ body {
 	.progress-line {
 		@apply w-full h-[2px]
 		bg-gray-100/20;
+	}
+}
+
+/* Team Page */
+@layer components {
+	.team-container {
+		@apply border-4 border-solid border-white
+		flex flex-col justify-center items-center
+		bg-yellow-400
+		text-white
+		relative
+		px-6
+		w-full h-screen;
+		min-width: 400px;
+		min-height: 650px;
+	}
+	.team-title {
+		@apply border-2 border-solid border-white
+		flex flex-row justify-between items-center
+		w-full h-fit
+		text-4xl;
 	}
 }

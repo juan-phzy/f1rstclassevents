@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import NavModal from "./NavModal";
 
@@ -10,7 +11,13 @@ import { useGSAP } from "@gsap/react";
 
 const NavBar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [isMounted, setIsMounted] = useState(false); // New state to track mounting
+
 	const modalRef = useRef(null); // Add a ref to your modal
+
+	useEffect(() => {
+		setIsMounted(true); // Set isMounted to true when component mounts
+	}, []);
 
 	useGSAP(() => {
 		// Initial setup for the modal - hidden by default
@@ -23,10 +30,11 @@ const NavBar = () => {
 				trigger: ".nav-container", // Reference the regular NavBar's class
 				start: "bottom top", // Start the animation when the bottom of the NavBar hits the top of the viewport
 				toggleActions: "play none reverse reset",
-				markers: true,
+				//markers: true,
+				scrub: 1,
 			},
 		});
-	}, []);
+	}, [isMounted]);
 
 	useGSAP(() => {
 		if (menuOpen) {
@@ -44,7 +52,15 @@ const NavBar = () => {
 			duration: 0.5,
 			autoAlpha: menuOpen ? 1 : 0,
 		});
-	}, [menuOpen]);
+	}, [menuOpen, isMounted]);
+
+	if (!isMounted) {
+		return (
+			<section className="nav-container">
+				<div className="w-full h-[80px]"></div>
+			</section>
+		); // Return null while component has not mounted
+	}
 
 	return (
 		<>
