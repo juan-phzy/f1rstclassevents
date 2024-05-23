@@ -3,65 +3,65 @@
 @tailwind utilities;
 
 :root {
-	/* This styles the scrollbar track */
-	::-webkit-scrollbar-track {
-		background: #505050; /* Track background */
-	}
+  /* This styles the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background: #505050; /* Track background */
+  }
 
-	/* This styles the scrollbar itself */
-	::-webkit-scrollbar {
-		width: 10px; /* Width of the scrollbar */
-		height: 5px; /* Height of the scrollbar for horizontal scrolls */
-	}
+  /* This styles the scrollbar itself */
+  ::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 5px; /* Height of the scrollbar for horizontal scrolls */
+  }
 
-	/* Handle */
-	::-webkit-scrollbar-thumb {
-		background: #d2d2d2; /* Handle color */
-		border-radius: 5px;
-	}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #d2d2d2; /* Handle color */
+    border-radius: 5px;
+  }
 
-	/* Handle on hover */
-	::-webkit-scrollbar-thumb:hover {
-		background: #fff; /* Handle color on hover */
-	}
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff; /* Handle color on hover */
+  }
 }
 
 html,
 body {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	box-sizing: border-box;
-	width: 100vw;
-	height: 100vh;
-	min-width: 400px;
-	min-height: 650px;
-	background-color: black;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  min-width: 400px;
+  min-height: 650px;
+  background-color: black;
 }
 
 @layer base {
-	body {
-		@apply /* border-4 border-solid border-red-600 */
+  body {
+    @apply /* border-4 border-solid border-red-600 */
 		flex flex-col justify-center items-center
 		relative;
-	}
+  }
 }
 
 @layer components {
-	.main-container {
-		@apply /* border-4 border-solid border-blue-600 */
+  .main-container {
+    @apply /* border-4 border-solid border-blue-600 */
 		flex flex-col justify-start items-center
 		relative
 		w-full h-fit;
-		min-width: 400px;
-		min-height: 650px;
-	}
+    min-width: 400px;
+    min-height: 650px;
+  }
 }
 
 /* Nav Styling */
 @layer components {
-	.blur-nav-container {
-		@apply /* border-2 border-solid border-yellow-600 */
+  .blur-nav-container {
+    @apply /* border-2 border-solid border-yellow-600 */
 		flex flex-row justify-between items-center
 		bg-slate-800/60
 		w-[97%] h-fit
@@ -72,43 +72,43 @@ body {
 		mr-auto
 		px-4
 		z-50;
-		backdrop-filter: blur(8px);
-	}
-	.nav-container {
-		@apply /* border-2 border-solid border-yellow-600 */
+    backdrop-filter: blur(8px);
+  }
+  .nav-container {
+    @apply /* border-2 border-solid border-yellow-600 */
 		bg-slate-800
 		flex flex-row justify-between items-center
 		w-full h-fit
 		px-4
 		z-50;
-	}
-	.nav-logo {
-		@apply /* border-2 border-solid border-purple-600 */
+  }
+  .nav-logo {
+    @apply /* border-2 border-solid border-purple-600 */
 		flex justify-center items-center
 		relative
 		w-[150px] h-[80px];
-	}
-	.nav-link-container {
-		@apply /* border-2 border-solid border-white */
+  }
+  .nav-link-container {
+    @apply /* border-2 border-solid border-white */
 		w-fit h-full
 		text-white
 		text-2xl
 		gap-6
 		max-[768px]:hidden
 		md:flex flex-row justify-center items-center;
-	}
-	.mobile-nav-menu-container {
-		@apply /* border-2 border-solid border-orange-600 */
+  }
+  .mobile-nav-menu-container {
+    @apply /* border-2 border-solid border-orange-600 */
 		flex justify-center items-center
 		relative
 		text-white
 		w-[80px] h-[80px]
 		
 		md:hidden;
-	}
+  }
 
-	.mobile-nav-modal {
-		@apply /* border-2 border-solid border-yellow-600 */
+  .mobile-nav-modal {
+    @apply /* border-2 border-solid border-yellow-600 */
 		flex flex-col justify-center items-center
 		fixed
 		w-full h-full
@@ -117,13 +117,13 @@ body {
 		text-5xl
 		gap-12
 		z-40;
-	}
+  }
 }
 
 /* Hero Page */
 @layer components {
-	.hero-container {
-		@apply /* border-2 border-dotted border-red-500 */
+  .hero-container {
+    @apply /* border-2 border-dotted border-red-500 */
 		flex justify-center items-center
     shrink-0
 		bg-slate-900
@@ -133,13 +133,13 @@ body {
     
     md:p-6;
 
-		width: 100%;
-		height: calc(100vh - 80px);
-		min-width: 400px;
-		min-height: 650px;
-	}
-	.hero-content {
-		@apply /* border-4 border-white border-dotted */
+    width: 100%;
+    height: calc(100vh - 80px);
+    min-width: 400px;
+    min-height: 650px;
+  }
+  .hero-content {
+    @apply /* border-4 border-white border-dotted */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
@@ -147,9 +147,9 @@ body {
 
     md:p-6
     md:flex-row;
-	}
-	.hero-title {
-		@apply /* border-[1px] border-dashed border-white/50 */
+  }
+  .hero-title {
+    @apply /* border-[1px] border-dashed border-white/50 */
 		flex flex-col justify-center items-center
 		text-3xl
 		w-full h-fit
@@ -157,21 +157,21 @@ body {
     md:items-start
     md:text-4xl
     lg:text-5xl;
-	}
-	.hero-3d {
-		@apply /* border-[1px] border-dashed border-white/50 */
+  }
+  .hero-3d {
+    @apply /* border-[1px] border-dashed border-white/50 */
 		flex justify-center items-center
 		text-5xl
 		w-full h-[50%];
-	}
-	.hero-text {
-		@apply /* border-[1px] border-dashed border-white/50 */
+  }
+  .hero-text {
+    @apply /* border-[1px] border-dashed border-white/50 */
 		flex flex-col justify-center items-center
 		text-2xl
 		w-full h-fit;
-	}
-	.hero-text-lg {
-		@apply /* border-[1px] border-dashed border-white/90 */
+  }
+  .hero-text-lg {
+    @apply /* border-[1px] border-dashed border-white/90 */
 		w-full h-fit
 		text-2xl
     hidden
@@ -180,13 +180,13 @@ body {
     md:flex-row 
     md:justify-start 
     md:items-start;
-	}
+  }
 }
 
 /* Service Page */
 @layer components {
-	.services-container {
-		@apply /* border-4 border-dotted border-yellow-500 */
+  .services-container {
+    @apply /* border-4 border-dotted border-yellow-500 */
 		flex flex-col justify-center items-center
     relative
     w-full h-screen
@@ -197,42 +197,42 @@ body {
     
     md:p-6;
 
-		height: 100vh;
-		min-width: 400px;
-		min-height: 650px;
-	}
-	.services-bg {
-		@apply bg-green-950
+    height: 100vh;
+    min-width: 400px;
+    min-height: 650px;
+  }
+  .services-bg {
+    @apply bg-green-950
 		w-1/2 h-full
 		absolute
 		top-0 left-0;
-	}
+  }
 
-	.services-content {
-		@apply /* border-4 border-solid border-red-600 */
+  .services-content {
+    @apply /* border-4 border-solid border-red-600 */
 		flex flex-col justify-center items-center
 		w-full h-full
     max-w-[1300px]
 		gap-2;
-	}
-	.services-header {
-		@apply /* border-[1px] border-dotted border-white/50 */
+  }
+  .services-header {
+    @apply /* border-[1px] border-dotted border-white/50 */
 		flex flex-row justify-center items-center
 		w-full h-fit
 		py-2
 		text-4xl
     
     md:justify-start;
-	}
-	.services-card {
-		@apply /* border-[1px] border-dashed border-white */
+  }
+  .services-card {
+    @apply /* border-[1px] border-dashed border-white */
 		flex justify-center items-center
     relative
 		py-5 px-2 gap-2
 		w-full h-fit;
-	}
-	.services-grid {
-		@apply /* border-solid border-2 border-purple-500 */
+  }
+  .services-grid {
+    @apply /* border-solid border-2 border-purple-500 */
     w-[150px]
     shrink-0
     absolute
@@ -245,28 +245,28 @@ body {
     md:items-center
     lg:w-[220px]
     xl:w-[350px];
-		height: calc(100% - 32px);
-	}
-	.sgrid-item {
-		@apply border-white border-[1px] border-solid
+    height: calc(100% - 32px);
+  }
+  .sgrid-item {
+    @apply border-white border-[1px] border-solid
     bg-gray-600/30
     flex justify-start items-center
     w-full h-full
     p-2;
-	}
-	.services-arrow {
-		@apply /* border-2 border-blue-600 border-solid */
+  }
+  .services-arrow {
+    @apply /* border-2 border-blue-600 border-solid */
     h-[100px] w-[50px]
     relative
     
     md:hidden;
-	}
+  }
 }
 
 /* Service Card */
 @layer components {
-	.servcard-container {
-		@apply /* border-2 border-dashed border-green-600 */
+  .servcard-container {
+    @apply /* border-2 border-dashed border-green-600 */
 		flex flex-col justify-start items-center
 		w-full h-fit
     max-w-[300px]
@@ -275,51 +275,51 @@ body {
 		relative
 		bg-amber-950
 		py-2 px-8;
-	}
-	.servcard-title {
-		@apply flex justify-center items-center
+  }
+  .servcard-title {
+    @apply flex justify-center items-center
 		w-full h-fit
 		relative
 		text-2xl;
-	}
-	.servcard-image {
-		@apply border-2 border-solid border-white
+  }
+  .servcard-image {
+    @apply border-2 border-solid border-white
 		bg-amber-800
 		flex justify-center items-center
 		relative
 		shrink-0
 		w-[200px] h-[200px];
-	}
-	.servcard-footer {
-		@apply /* border-2 border-solid border-red-600 */
+  }
+  .servcard-footer {
+    @apply /* border-2 border-solid border-red-600 */
 		flex flex-col justify-between items-center
 		w-full h-full
 		gap-4
 		pb-2
 		relative;
-	}
-	.servcard-desc {
-		@apply /* border-[1px] border-dashed border-white/50 */
+  }
+  .servcard-desc {
+    @apply /* border-[1px] border-dashed border-white/50 */
 		relative
 		w-full h-fit;
-	}
-	.servcard-btns {
-		@apply /* border-2 border-solid border-white */
+  }
+  .servcard-btns {
+    @apply /* border-2 border-solid border-white */
 		flex flex-row justify-between items-center
 		relative
 		gap-2
 		w-full h-fit;
-	}
-	.progress-line {
-		@apply w-full h-[2px]
+  }
+  .progress-line {
+    @apply w-full h-[2px]
 		bg-gray-100/20;
-	}
+  }
 }
 
 /* Team Page */
 @layer components {
-	.team-container {
-		@apply border-4 border-solid border-white
+  .team-container {
+    @apply border-4 border-solid border-white
     flex justify-center items-center
     shrink-0
 		bg-yellow-900
@@ -329,18 +329,18 @@ body {
 		w-full h-screen
     
     md:p-6;
-		min-width: 400px;
-		min-height: 650px;
-	}
-	.team-content {
-		@apply border-4 border-dotted border-red-300
+    min-width: 400px;
+    min-height: 650px;
+  }
+  .team-content {
+    @apply border-4 border-dotted border-red-300
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
     gap-8;
-	}
-	.team-title {
-		@apply border-2 border-solid border-white
+  }
+  .team-title {
+    @apply border-2 border-solid border-white
 		flex flex-row justify-between items-center
 		w-full h-fit
     max-w-[1000px]
@@ -348,59 +348,84 @@ body {
     
     md:text-4xl
     lg:text-5xl;
-	}
-	.team-body {
-		@apply border-2 border-pink-600 border-solid
+  }
+  .team-body {
+    @apply border-2 border-pink-600 border-solid
     flex justify-center items-center
     relative
     w-full h-[80%]
     max-w-[1000px];
-	}
+  }
 }
 
 /* Team Member Display */
 @layer components {
-	.team-display-container {
-		@apply border-2 border-solid border-white
+  .team-display-container {
+    @apply border-2 border-solid border-white
     flex flex-col justify-center items-center
     w-full h-full
     gap-4;
-	}
-	.member-name-container {
-		@apply border-2 border-dotted border-blue-400;
-	}
-	.member-name {
-		@apply border-[1px] border-solid border-pink-400
+  }
+  .member-name-container {
+    @apply border-2 border-dotted border-blue-400;
+  }
+  .member-name {
+    @apply border-[1px] border-solid border-pink-400
     text-6xl;
-	}
-	.member-description {
-		@apply border-2 border-solid border-white
+  }
+  .member-description {
+    @apply border-2 border-solid border-white
     flex justify-center items-center
     w-1/2 h-fit;
-	}
+  }
 }
 
 /* Bookings Page */
 @layer components {
-	.booking-container {
-		@apply border-4 border-solid border-white
+  .booking-container {
+    @apply border-4 border-solid border-white
     flex justify-center items-center
     shrink-0
-		bg-purple-900
-		text-white
-		relative
-		p-2
-		w-full h-screen
+	bg-purple-900
+	text-white
+	relative
+	p-2
+	w-full h-screen
     
     md:p-6;
-		min-width: 400px;
-		min-height: 650px;
-	}
-	.booking-content {
-		@apply border-4 border-dotted border-red-300
+    min-width: 400px;
+    min-height: 650px;
+  }
+  .booking-content {
+    @apply border-4 border-dotted border-red-300
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
     gap-8;
-	}
+  }
+}
+
+/* Bookings Page */
+@layer components {
+  .reviews-container {
+    @apply border-4 border-solid border-white
+    flex justify-center items-center
+    shrink-0
+	bg-pink-900
+	text-white
+	relative
+	p-2
+	w-full h-screen
+    
+    md:p-6;
+    min-width: 400px;
+    min-height: 650px;
+  }
+  .reviews-content {
+    @apply border-4 border-dotted border-red-300
+    flex flex-col justify-center items-center
+    w-full h-full
+    max-w-[1300px]
+    gap-8;
+  }
 }

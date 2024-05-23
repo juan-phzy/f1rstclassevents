@@ -9,6 +9,7 @@ import BlurNavBar from "@/components/shared/BlurNavBar";
 import NavBar from "@/components/shared/NavBar";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import ReviewsPage from "@/components/pages/ReviewsPage";
 
 export default function Home() {
 	useEffect(() => {
@@ -29,6 +30,7 @@ export default function Home() {
 			<Services />
 			<TeamPage />
 			<BookingsPage />
+			<ReviewsPage />
 		</main>
 	);
 }
