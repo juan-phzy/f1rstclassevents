@@ -1,6 +1,5 @@
 "use client";
 
-import Loading from "@/components/Loading";
 import BookingsPage from "@/components/pages/BookingsPage";
 import HeroPage from "@/components/pages/HeroPage";
 import Services from "@/components/pages/Services";
