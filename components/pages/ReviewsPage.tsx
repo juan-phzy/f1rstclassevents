@@ -1,9 +1,9 @@
 "use client"
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const BookingsPage = () => {
-	
+	const [reviews, setReviews] = useState([]);
 	useEffect(() => {
 
 		const getReviews = async () => {
@@ -22,14 +22,32 @@ const BookingsPage = () => {
 		};
 		const res = getReviews();
 		res
-			.then((data) => console.log(data))
+			.then((data) => {console.log(data); setReviews(data.result.reviews);})
 			.catch((err) => console.log(err));
 		
 	}, []);
 
 	return (
 		<div className="reviews-container">
-			<div className="reviews-content">Reviews Page</div>
+			<div className="reviews-content">
+			{reviews.map((review: any, index: number) => (
+                <div key={index} className="review-card">
+                    <div className="review-header">
+                        <img width={30} height={30} src={review.profile_photo_url} alt={`${review.author_name}'s profile`} />
+                        <div>
+                            <a href={review.author_url} target="_blank" rel="noopener noreferrer">
+                                {review.author_name}
+                            </a>
+                            <p>{review.relative_time_description}</p>
+                        </div>
+                    </div>
+                    <div className="review-body">
+                        <p>{review.text}</p>
+                        <p>Rating: {review.rating}</p>
+                    </div>
+                </div>
+            ))}
+			</div>
 		</div>
 	);
 };
