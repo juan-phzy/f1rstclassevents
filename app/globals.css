@@ -36,7 +36,6 @@ body {
   height: 100vh;
   min-width: 400px;
   min-height: 650px;
-  background-color: black;
 }
 
 @layer base {
@@ -55,6 +54,19 @@ body {
 		w-full h-fit;
     min-width: 400px;
     min-height: 650px;
+  }
+  .main-background {
+    @apply flex flex-col justify-center items-center
+    /* border-solid border-4 border-red-600 */
+    w-full h-full
+    left-0 top-0
+    fixed
+    -z-10;
+  }
+  .bg-video {
+    @apply 
+    /* border-4 border-solid border-green-600 */
+    w-full h-full bg-cover object-cover
   }
 }
 
@@ -126,7 +138,7 @@ body {
     @apply /* border-2 border-dotted border-red-500 */
 		flex justify-center items-center
     shrink-0
-		bg-slate-900
+	/* bg-slate-900 */
 		text-center
 		text-white
     p-2
@@ -319,10 +331,11 @@ body {
 /* Team Page */
 @layer components {
   .team-container {
-    @apply border-4 border-solid border-white
+    @apply 
+    /* border-4 border-solid border-white */
     flex justify-center items-center
     shrink-0
-		bg-yellow-900
+		/* bg-yellow-900 */
 		text-white
 		relative
 		p-2
@@ -333,14 +346,17 @@ body {
     min-height: 650px;
   }
   .team-content {
-    @apply border-4 border-dotted border-red-300
+    @apply 
+    /* border-4 border-dotted border-red-300 */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
+    pt-20
     gap-8;
   }
   .team-title {
-    @apply border-2 border-solid border-white
+    @apply 
+    border-b-2 border-solid border-white
 		flex flex-row justify-between items-center
 		w-full h-fit
     max-w-[1000px]
@@ -350,7 +366,8 @@ body {
     lg:text-5xl;
   }
   .team-body {
-    @apply border-2 border-pink-600 border-solid
+    @apply 
+    /* border-2 border-pink-600 border-solid */
     flex justify-center items-center
     relative
     w-full h-[80%]
@@ -361,32 +378,50 @@ body {
 /* Team Member Display */
 @layer components {
   .team-display-container {
-    @apply border-2 border-solid border-white
+    @apply 
+    /* border-2 border-solid border-white */
     flex flex-col justify-center items-center
     w-full h-full
     gap-4;
   }
   .member-name-container {
-    @apply border-2 border-dotted border-blue-400;
+    @apply flex justify-center items-center
+    /* border-2 border-dotted border-blue-400 */
+    w-[200px] h-[80px]
+    relative;
   }
   .member-name {
-    @apply border-[1px] border-solid border-pink-400
+    @apply flex justify-center items-center
+    /* border-[1px] border-solid border-pink-400 */
+    absolute
     text-6xl;
   }
-  .member-description {
-    @apply border-2 border-solid border-white
+
+  .member-desc-container {
+    @apply flex flex-col justify-start items-center
+    /* border-2 border-dotted border-green-400 */
+    w-[300px] h-[400px]
+    relative
+    gap-4;
+  }
+
+  .member-desc {
+    @apply 
+    /* border-2 border-solid border-white */
     flex justify-center items-center
-    w-1/2 h-fit;
+    absolute
+    w-full h-fit;
   }
 }
 
 /* Bookings Page */
 @layer components {
   .booking-container {
-    @apply border-4 border-solid border-white
+    @apply 
+    /* border-4 border-solid border-white */
     flex justify-center items-center
     shrink-0
-	bg-purple-900
+	/* bg-purple-900 */
 	text-white
 	relative
 	p-2
@@ -397,7 +432,8 @@ body {
     min-height: 650px;
   }
   .booking-content {
-    @apply border-4 border-dotted border-red-300
+    @apply 
+    /* border-4 border-dotted border-red-300 */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
