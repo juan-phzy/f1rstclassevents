@@ -38,7 +38,7 @@ const BlurNavBar = () => {
 				start: "bottom top", // Start the animation when the bottom of the NavBar hits the top of the viewport
 				toggleActions: "play none reverse reset",
 				scrub: 1,
-				markers: true,
+				markers: false,
 			},
 		});
 	}, [isMounted]);
@@ -80,7 +80,7 @@ const BlurNavBar = () => {
 				</div>
 
 				<div className="nav-link-container ">
-					<a href="#home">Home</a>
+					<a href="#mainnav">Home</a>
 					<a href="#services">Services</a>
 					<a href="#team">Team</a>
 					<a href="#bookings">Book</a>

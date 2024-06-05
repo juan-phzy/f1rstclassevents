@@ -64,7 +64,7 @@ const NavBar = () => {
 
 	return (
 		<>
-			<section className="nav-container">
+			<section id="mainnav" className="nav-container">
 				<div className="nav-logo">
 					<Image
 						className="object-contain"
@@ -75,7 +75,7 @@ const NavBar = () => {
 				</div>
 
 				<div className="nav-link-container ">
-					<a href="#home">Home</a>
+					<a href="#mainnav">Home</a>
 					<a href="#services">Services</a>
 					<a href="#team">Team</a>
 					<a href="#bookings">Book</a>

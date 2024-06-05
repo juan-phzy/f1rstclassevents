@@ -27,7 +27,7 @@ const TeamMemberDisplay = () => {
         end: "+=400px",
         toggleActions: "play reverse play reverse",
         // scrub: 1,
-        markers: true,
+        markers: false,
         pin: ".team-container",
         pinSpacing: true,
       },
@@ -42,7 +42,7 @@ const TeamMemberDisplay = () => {
         end: "+=200px",
         toggleActions: "none play reverse none",
         // scrub: 1,
-        markers: true,
+        markers: false,
       },
     });
     gsap.fromTo(
@@ -58,7 +58,7 @@ const TeamMemberDisplay = () => {
           end: "+=200px",
           toggleActions: "none play reverse none",
           // scrub: 1,
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -72,7 +72,7 @@ const TeamMemberDisplay = () => {
         end: "+=200px",
         toggleActions: "none play reverse none",
         // scrub: 1,
-        markers: true,
+        markers: false,
       },
     });
     gsap.fromTo(
@@ -88,7 +88,7 @@ const TeamMemberDisplay = () => {
           end: "+=200px",
           toggleActions: "none play reverse none",
           // scrub: 1,
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -103,7 +103,7 @@ const TeamMemberDisplay = () => {
         end: "+=200px",
         toggleActions: "none play reverse none",
         // scrub: 1,
-        markers: true,
+        markers: false,
       },
     });
     gsap.fromTo(
@@ -119,7 +119,7 @@ const TeamMemberDisplay = () => {
           end: "+=200px",
           toggleActions: "none play reverse none",
           // scrub: 1,
-          markers: true,
+          markers: false,
         },
       }
     );

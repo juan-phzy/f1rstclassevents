@@ -1,47 +1,75 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import ServiceCard from "../cards/ServiceCard";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { useState } from "react";
+import { servicesArray, servicesObj } from "@/constants";
 
 const Services = () => {
-	return (
-		<section id="services" className="services-container">
-			{/* <Image
-				className="object-cover absolute top-0 left-0 z-0"
-				src="/images/sample-image.jpg"
-				alt="services image"
-				fill
-			/> */}
+  const [chosenService, setService] = useState("dj");
 
-			<div className="services-bg z-10"></div>
+  const goLeft = () => {
+    const index = servicesArray.indexOf(chosenService);
+    if (index === 0) {
+      setService(servicesArray[servicesArray.length - 1]);
+    } else {
+      setService(servicesArray[index - 1]);
+    }
+  };
 
-			<div className="services-content z-20">
-				<div className="services-header">Services</div>
-				<div className="services-card">
-					<div className="services-grid">
-						<div className="sgrid-item">Weddings</div>
-						<div className="sgrid-item">Birthdays</div>
-						<div className="sgrid-item">Nightlife</div>
-						<div className="sgrid-item">Corporate</div>
-						<div className="sgrid-item">DJ Mixing</div>
-						<div className="sgrid-item">MC Hosting</div>
-						<div className="sgrid-item">Pro Audio</div>
-					</div>
+  const goRight = () => {
+    const index = servicesArray.indexOf(chosenService);
+    if (index === servicesArray.length - 1) {
+      setService(servicesArray[0]);
+    } else {
+      setService(servicesArray[index + 1]);
+    }
+  };
 
-					<button className="services-arrow">
-						<BsChevronLeft className="w-full h-full" />
-					</button>
+  return (
+    <section id="services" className="services-container">
+      <Image
+        className="object-cover absolute top-0 left-0 z-0"
+        src={`/services/${chosenService}.jpg`}
+        alt="services image"
+        fill
+      />
 
-					<ServiceCard />
+      <div className="services-bg z-10"></div>
 
-					<button className="services-arrow">
-						<BsChevronRight className="w-full h-full" />
-					</button>
-				</div>
-			</div>
-		</section>
-	);
+      <div className="services-content z-20">
+        <div className="services-header">Services</div>
+        <div className="services-card">
+          <div className="services-grid">
+            {servicesArray.map((service: string) => {
+              return (
+                <button
+                  key={service}
+                  onClick={() => setService(service)}
+                  className={`hover:bg-white/25 sgrid-item ${
+                    service === chosenService && "text-white bg-white/30"
+                  }`}
+                >
+                  {servicesObj[service].title}
+                </button>
+              );
+            })}
+          </div>
+
+          <button onClick={goLeft} className="services-arrow">
+            <BsChevronLeft className="w-full h-full" />
+          </button>
+
+          <ServiceCard serv={chosenService} />
+
+          <button onClick={goRight} className="services-arrow">
+            <BsChevronRight className="w-full h-full" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Services;
