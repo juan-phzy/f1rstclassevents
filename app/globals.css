@@ -171,23 +171,23 @@ body {
     
     md:items-start
     md:text-4xl
-    lg:text-5xl;
+    lg:text-6xl;
+  }
+  .hero-text {
+    @apply /* border-[1px] border-dashed border-white/50 */
+		flex flex-row justify-center items-center
+		text-lg
+		w-full h-fit;
   }
   .hero-3d {
     @apply 
     /* border-[1px] border-dashed border-white/50 */
-		flex justify-center items-center
+    flex justify-center items-center
     overflow-hidden
     absolute
     object-cover
     top-0 left-0 -z-10
-		w-full h-full;
-  }
-  .hero-text {
-    @apply /* border-[1px] border-dashed border-white/50 */
-		flex flex-col justify-center items-center
-		text-2xl
-		w-full h-fit;
+    w-full h-full;
   }
   .hero-text-lg {
     @apply /* border-[1px] border-dashed border-white/90 */
@@ -355,7 +355,7 @@ body {
   }
   .team-content {
     @apply 
-    border-4 border-dotted border-red-300
+    /* border-4 border-dotted border-red-300 */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
@@ -372,8 +372,9 @@ body {
     lg:text-5xl;
   }
   .team-body {
-    @apply /* border-2 border-pink-600 border-solid */
-    flex justify-center items-center
+    @apply 
+    /* border-2 border-pink-600 border-solid */
+    flex justify-center items-center gap-4
     relative
     w-full h-[80%]
     max-w-[1000px];
@@ -382,10 +383,29 @@ body {
 
 /* Team Member Display */
 @layer components {
+  .team-image-lg {
+    @apply 
+    /* border-2 border-solid border-white */
+    hidden
+    w-[300px] h-full
+    relative
+    md:flex md:flex-col md:justify-center md:items-center;
+  }
+  .team-image-sm {
+    @apply 
+    border-2 border-solid border-white
+    flex justify-center items-center
+    w-[70px] h-[70px]
+    rounded-full
+    overflow-hidden
+    relative
+    md:hidden;
+  }
   .team-display-container {
-    @apply /* border-2 border-solid border-white */
+    @apply 
+    /* border-2 border-solid border-white */
     flex flex-col justify-center items-center
-    w-full h-full
+    w-fit h-full
     gap-4;
   }
   .member-name-container {
@@ -395,7 +415,7 @@ body {
     relative;
   }
   .member-name {
-    @apply flex justify-center items-center
+    @apply flex justify-center items-center gap-4
     /* border-[1px] border-solid border-pink-400 */
     absolute
     text-6xl;

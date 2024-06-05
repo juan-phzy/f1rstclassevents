@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import ServiceCard from "../cards/ServiceCard";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";

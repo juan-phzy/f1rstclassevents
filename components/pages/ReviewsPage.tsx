@@ -6,7 +6,6 @@ import {
   IoIosStar,
   IoIosStarHalf,
   IoIosStarOutline,
-  IoIosPlay,
 } from "react-icons/io";
 
 const BookingsPage = () => {
