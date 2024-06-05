@@ -80,11 +80,11 @@ const BlurNavBar = () => {
 				</div>
 
 				<div className="nav-link-container ">
-					<div>Home</div>
-					<div>Services</div>
-					<div>Team</div>
-					<div>Book</div>
-					<div>Gallery</div>
+					<a href="#home">Home</a>
+					<a href="#services">Services</a>
+					<a href="#team">Team</a>
+					<a href="#bookings">Book</a>
+					<a href="#reviews">Gallery</a>
 				</div>
 
 				<button

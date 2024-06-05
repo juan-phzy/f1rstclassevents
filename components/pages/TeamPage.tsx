@@ -4,7 +4,7 @@ import TeamMemberDisplay from "../TeamMemberDisplay";
 
 const TeamPage = () => {
 	return (
-		<section className="team-container">
+		<section id="team" className="team-container">
 			<div className="team-content">
 				<div className="team-title">
 					Meet The Team

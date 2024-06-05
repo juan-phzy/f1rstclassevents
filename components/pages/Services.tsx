@@ -6,7 +6,7 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const Services = () => {
 	return (
-		<section className="services-container">
+		<section id="services" className="services-container">
 			{/* <Image
 				className="object-cover absolute top-0 left-0 z-0"
 				src="/images/sample-image.jpg"

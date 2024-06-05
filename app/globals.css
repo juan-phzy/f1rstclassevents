@@ -234,7 +234,7 @@ body {
 		flex flex-col justify-center items-center
 		w-full h-full
     max-w-[1300px]
-		gap-2;
+		gap-2 pt-20;
   }
   .services-header {
     @apply /* border-[1px] border-dotted border-white/50 */
@@ -458,7 +458,7 @@ body {
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
-    gap-8;
+    gap-8 pt-20;
   }
 }
 

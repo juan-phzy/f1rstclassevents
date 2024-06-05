@@ -3,7 +3,7 @@ import Spline from "@splinetool/react-spline/next";
 
 const HeroPage = () => {
   return (
-    <section className="hero-container">
+    <section id="hero" className="hero-container">
       <div className="hero-3d">
         <Spline scene="https://prod.spline.design/REygNwz3qKiVvlAK/scene.splinecode" />
       </div>

@@ -35,7 +35,7 @@ const BookingsPage = () => {
   }, []);
 
   return (
-    <div className="reviews-container">
+    <div id="reviews" className="reviews-container">
       <div className="reviews-content">
         <div className="reviews-title">Reviews & Gallery</div>
 
