@@ -1,12 +1,9 @@
 "use client";
 
+import { galleryArray } from "@/constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import {
-  IoIosStar,
-  IoIosStarHalf,
-  IoIosStarOutline,
-} from "react-icons/io";
+import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
 
 const BookingsPage = () => {
   const [reviews, setReviews] = useState([]);
@@ -92,6 +89,19 @@ const BookingsPage = () => {
               </div>
             );
           })}
+        </div>
+
+        <div className="gallery-images-container">
+          {galleryArray.map((img) => (
+            <div key={img} className="gallery-img-cont">
+              <Image
+                className="object-contain"
+                src={`/gallery/${img}.jpg`}
+                alt="Gallery 1"
+                fill
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
