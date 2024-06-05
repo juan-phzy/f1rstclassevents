@@ -5,9 +5,7 @@ const TeamPage = () => {
 		<section className="team-container">
 			<div className="team-content">
 				<div className="team-title">
-					<span>Meet</span>
-					<span>The</span>
-					<span>Team</span>
+					Meet The Team
 				</div>
 				<div className="team-body">
 					<TeamMemberDisplay />

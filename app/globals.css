@@ -32,23 +32,26 @@ body {
   padding: 0;
   position: relative;
   box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: fit-content;
   min-width: 400px;
   min-height: 650px;
 }
 
 @layer base {
   body {
-    @apply /* border-4 border-solid border-red-600 */
+    @apply 
+    /* border-4 border-solid border-red-600 */
 		flex flex-col justify-center items-center
-		relative;
+		relative box-border shrink-0;
   }
 }
 
+/* Main Styling */
 @layer components {
   .main-container {
-    @apply /* border-4 border-solid border-blue-600 */
+    @apply 
+    /* border-4 border-solid border-blue-600 */
 		flex flex-col justify-start items-center
 		relative
 		w-full h-fit;
@@ -61,12 +64,11 @@ body {
     w-full h-full
     left-0 top-0
     fixed
-    -z-10;
+    -z-20;
   }
   .bg-video {
-    @apply 
-    /* border-4 border-solid border-green-600 */
-    w-full h-full bg-cover object-cover
+    @apply /* border-4 border-solid border-green-600 */
+    w-full h-full bg-cover object-cover;
   }
 }
 
@@ -138,6 +140,7 @@ body {
     @apply /* border-2 border-dotted border-red-500 */
 		flex justify-center items-center
     shrink-0
+    relative
 	/* bg-slate-900 */
 		text-center
 		text-white
@@ -172,12 +175,13 @@ body {
   }
   .hero-3d {
     @apply 
-    border-[1px] border-dashed border-white/50
+    /* border-[1px] border-dashed border-white/50 */
 		flex justify-center items-center
     overflow-hidden
-    relative
-		text-5xl
-		w-full h-[60%];
+    absolute
+    object-cover
+    top-0 left-0 -z-10
+		w-full h-full;
   }
   .hero-text {
     @apply /* border-[1px] border-dashed border-white/50 */
@@ -201,7 +205,8 @@ body {
 /* Service Page */
 @layer components {
   .services-container {
-    @apply /* border-4 border-dotted border-yellow-500 */
+    @apply 
+    border-4 border-dotted border-yellow-500
 		flex flex-col justify-center items-center
     relative
     w-full h-screen
@@ -213,6 +218,7 @@ body {
     md:p-6;
 
     height: 100vh;
+    max-width: 100%;
     min-width: 400px;
     min-height: 650px;
   }
@@ -334,8 +340,7 @@ body {
 /* Team Page */
 @layer components {
   .team-container {
-    @apply 
-    /* border-4 border-solid border-white */
+    @apply /* border-4 border-solid border-white */
     flex justify-center items-center
     shrink-0
 		/* bg-yellow-900 */
@@ -350,7 +355,7 @@ body {
   }
   .team-content {
     @apply 
-    /* border-4 border-dotted border-red-300 */
+    border-4 border-dotted border-red-300
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
@@ -358,19 +363,16 @@ body {
     gap-8;
   }
   .team-title {
-    @apply 
-    border-b-2 border-solid border-white
-		flex flex-row justify-between items-center
-		w-full h-fit
-    max-w-[1000px]
+    @apply border-b-2 border-solid border-white
+		flex flex-row justify-center items-center
+		w-fit h-fit
 		text-3xl
-    
+
     md:text-4xl
     lg:text-5xl;
   }
   .team-body {
-    @apply 
-    /* border-2 border-pink-600 border-solid */
+    @apply /* border-2 border-pink-600 border-solid */
     flex justify-center items-center
     relative
     w-full h-[80%]
@@ -381,8 +383,7 @@ body {
 /* Team Member Display */
 @layer components {
   .team-display-container {
-    @apply 
-    /* border-2 border-solid border-white */
+    @apply /* border-2 border-solid border-white */
     flex flex-col justify-center items-center
     w-full h-full
     gap-4;
@@ -409,8 +410,7 @@ body {
   }
 
   .member-desc {
-    @apply 
-    /* border-2 border-solid border-white */
+    @apply /* border-2 border-solid border-white */
     flex justify-center items-center
     absolute
     w-full h-fit;
@@ -420,8 +420,7 @@ body {
 /* Bookings Page */
 @layer components {
   .booking-container {
-    @apply 
-    /* border-4 border-solid border-white */
+    @apply /* border-4 border-solid border-white */
     flex justify-center items-center
     shrink-0
 	/* bg-purple-900 */
@@ -435,8 +434,7 @@ body {
     min-height: 650px;
   }
   .booking-content {
-    @apply 
-    /* border-4 border-dotted border-red-300 */
+    @apply /* border-4 border-dotted border-red-300 */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
@@ -444,42 +442,80 @@ body {
   }
 }
 
-/* Bookings Page */
+/* Reviews Page */
 @layer components {
   .reviews-container {
-    @apply border-4 border-solid border-white
-    flex justify-center items-center
+    @apply 
+    /* border-4 border-solid border-white */
+    flex flex-col justify-center items-center
     shrink-0
-	bg-pink-900
-	text-white
-	relative
-	p-2
-	w-full h-screen
+    bg-pink-900/40
+    text-white
+    relative
+    p-4
+    w-full h-screen
     
     md:p-6;
     min-width: 400px;
     min-height: 650px;
   }
   .reviews-content {
-    @apply border-4 border-dotted border-red-300
-    flex flex-col justify-center items-center flex-wrap
+    @apply 
+    /* border-4 border-dotted border-red-300 */
+    flex flex-col justify-center items-center
     w-full h-full
-    relative
     max-w-[1300px]
+    relative
     gap-8;
   }
+  .reviews-title {
+    @apply border-b-2 border-solid border-white
+    flex flex-row justify-between items-center self-start
+    w-fit h-fit pr-10
+    text-3xl
+    
+    md:text-4xl
+    lg:text-5xl;
+  }
+  .reviews-card-container {
+    @apply 
+    /* border-2 border-solid border-white */
+    flex flex-row justify-start items-start gap-x-2
+    overflow-x-scroll
+    w-full h-fit py-2;
+  }
   .review-card {
-    @apply border-2 border-solid border-white
-    flex flex-col justify-center items-center
-    w-[300px] h-fit
-    text-xs
-    gap-4;
+    @apply 
+    /* border-2 border-solid border-white */
+    flex flex-col justify-start items-center
+    w-[300px] h-[200px] m-0
+    bg-white
+    shrink-0
+    rounded-lg
+    text-xs 
+    text-black
+    p-2 gap-2;
   }
   .review-header {
     @apply 
     /* border-2 border-dotted border-blue-400 */
-    flex flex-row justify-center items-center
+    flex flex-row justify-start items-center
     w-full h-fit
+    gap-2;
+  }
+  .review-stars {
+    @apply 
+    /* border-2 border-dotted border-red-400 */
+    flex flex-row justify-start items-center
+    w-full h-fit text-xs
+    gap-1;
+  
+  }
+  .review-body {
+    @apply 
+    /* border-2 border-dotted border-green-400 */
+    flex flex-col justify-start items-center
+    w-full h-full overflow-auto
     gap-2;
   }
 }
