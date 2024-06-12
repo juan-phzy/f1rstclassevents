@@ -102,7 +102,7 @@ const BlurNavBar = () => {
 					/>
 				</button>
 			</section>
-			<NavModal ref={blurmodalRef} open={menuOpen} />
+			<NavModal ref={blurmodalRef} open={menuOpen} toggle={setMenuOpen} />
 		</>
 	);
 };

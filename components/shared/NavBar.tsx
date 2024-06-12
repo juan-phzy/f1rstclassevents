@@ -97,7 +97,7 @@ const NavBar = () => {
 					/>
 				</button>
 			</section>
-			<NavModal ref={modalRef} open={menuOpen} />
+			<NavModal ref={modalRef} open={menuOpen} toggle={setMenuOpen} />
 		</>
 	);
 };
