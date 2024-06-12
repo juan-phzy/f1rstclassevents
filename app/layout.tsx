@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import "./globals.css";
 
 const pd = Playfair_Display({ subsets: ["latin"] });
@@ -23,6 +25,7 @@ export default function RootLayout({
           </video>
         </div>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
