@@ -30,9 +30,10 @@ const Services = () => {
   return (
     <section id="services" className="services-container">
       <Image
+        loading="eager"
         className="object-cover absolute top-0 left-0 z-0"
         src={`/services/${chosenService}.jpg`}
-        alt="services image"
+        alt={`${chosenService} service`}
         fill
       />
 

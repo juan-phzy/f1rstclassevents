@@ -133,6 +133,7 @@ const TeamMemberDisplay = () => {
             <span>Sriv</span>
             <div className="team-image-sm">
               <Image
+                loading="eager"
                 className="object-contain"
                 src="/images/sriv-small.jpg"
                 alt="sriv-small"
@@ -144,6 +145,7 @@ const TeamMemberDisplay = () => {
           <span>Sri</span>
             <div className="team-image-sm">
               <Image
+                loading="eager"
                 className="object-contain"
                 src="/images/sri-small.jpg"
                 alt="sri-small"
@@ -176,6 +178,7 @@ const TeamMemberDisplay = () => {
       </div>
       <div className="team-image-lg">
         <Image
+          loading="eager"
           ref={srivImg}
           className="object-contain"
           src="/images/sriv-full.jpg"
@@ -183,6 +186,7 @@ const TeamMemberDisplay = () => {
           fill
         />
         <Image
+          loading="eager"
           ref={sriImg}
           className="object-contain"
           src="/images/sri-full.jpg"

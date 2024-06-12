@@ -72,6 +72,7 @@ const BlurNavBar = () => {
 			<section ref={blurNavRef} className="blur-nav-container">
 				<div className="nav-logo">
 					<Image
+						loading="eager"
 						className="object-contain"
 						src="/images/f1c-logo.png"
 						alt="F1rst Class Events"

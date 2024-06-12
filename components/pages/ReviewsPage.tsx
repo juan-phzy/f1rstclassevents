@@ -9,7 +9,6 @@ const BookingsPage = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     const getReviews = async () => {
-      const key = process.env.NEXT_PUBLIC_GOOGLE_API;
       const response = await fetch(
         `https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/details/json
 				?fields=review
@@ -93,9 +92,10 @@ const BookingsPage = () => {
           {galleryArray.map((img) => (
             <div key={img} className="gallery-img-cont">
               <Image
+                loading="eager"
                 className="object-contain"
                 src={`/gallery/${img}.jpg`}
-                alt="Gallery 1"
+                alt={`Gallery image ${img}`}
                 fill
               />
             </div>
