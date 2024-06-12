@@ -7,23 +7,23 @@ import { useState } from "react";
 import { servicesArray, servicesObj } from "@/constants";
 
 const Services = () => {
-  const [chosenService, setService] = useState("dj");
+  const [chosenService, setChosenService] = useState("dj");
 
   const goLeft = () => {
     const index = servicesArray.indexOf(chosenService);
     if (index === 0) {
-      setService(servicesArray[servicesArray.length - 1]);
+      setChosenService(servicesArray[servicesArray.length - 1]);
     } else {
-      setService(servicesArray[index - 1]);
+      setChosenService(servicesArray[index - 1]);
     }
   };
 
   const goRight = () => {
     const index = servicesArray.indexOf(chosenService);
     if (index === servicesArray.length - 1) {
-      setService(servicesArray[0]);
+      setChosenService(servicesArray[0]);
     } else {
-      setService(servicesArray[index + 1]);
+      setChosenService(servicesArray[index + 1]);
     }
   };
 
@@ -47,7 +47,7 @@ const Services = () => {
               return (
                 <button
                   key={service}
-                  onClick={() => setService(service)}
+                  onClick={() => setChosenService(service)}
                   className={`hover:bg-white/25 sgrid-item ${
                     service === chosenService && "text-white bg-white/30"
                   }`}
