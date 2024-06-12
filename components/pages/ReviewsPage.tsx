@@ -10,7 +10,6 @@ const BookingsPage = () => {
   useEffect(() => {
     const getReviews = async () => {
       const key = process.env.NEXT_PUBLIC_GOOGLE_API;
-      console.log("key", key);
       const response = await fetch(
         `https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/details/json
 				?fields=review
@@ -25,7 +24,6 @@ const BookingsPage = () => {
     const res = getReviews();
     res
       .then((data) => {
-        console.log(data);
         setReviews(data.result.reviews);
       })
       .catch((err) => console.log(err));
