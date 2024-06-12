@@ -96,6 +96,7 @@ const BookingsPage = () => {
                 className="object-contain"
                 src={`/gallery/${img}.jpg`}
                 alt={`Gallery image ${img}`}
+                sizes="50vw"
                 fill
               />
             </div>

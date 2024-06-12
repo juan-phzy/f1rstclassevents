@@ -137,6 +137,8 @@ const TeamMemberDisplay = () => {
                 className="object-contain"
                 src="/images/sriv-small.jpg"
                 alt="sriv-small"
+                sizes="50vw"
+
                 fill
               />
             </div>
@@ -149,6 +151,7 @@ const TeamMemberDisplay = () => {
                 className="object-contain"
                 src="/images/sri-small.jpg"
                 alt="sri-small"
+                sizes="50vw"
                 fill
               />
             </div>
@@ -183,6 +186,7 @@ const TeamMemberDisplay = () => {
           className="object-contain"
           src="/images/sriv-full.jpg"
           alt="sriv-full"
+          sizes="50vw"
           fill
         />
         <Image
@@ -191,6 +195,7 @@ const TeamMemberDisplay = () => {
           className="object-contain"
           src="/images/sri-full.jpg"
           alt="sriv-full"
+          sizes="50vw"
           fill
         />
       </div>
