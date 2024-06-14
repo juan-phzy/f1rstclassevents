@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
+import { Dosis, Playfair_Display, Poiret_One } from "next/font/google";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import "./globals.css";
 
-const pd = Playfair_Display({ subsets: ["latin"] });
+const pd = Dosis({
+  weight: "200",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "F1rst Class Events",

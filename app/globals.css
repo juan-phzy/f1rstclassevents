@@ -36,12 +36,12 @@ body {
   height: fit-content;
   min-width: 400px;
   min-height: 650px;
+  /* scroll-behavior: smooth; */
 }
 
 @layer base {
   body {
-    @apply 
-    /* border-4 border-solid border-red-600 */
+    @apply /* border-4 border-solid border-red-600 */
 		flex flex-col justify-center items-center
 		relative box-border shrink-0;
   }
@@ -50,8 +50,7 @@ body {
 /* Main Styling */
 @layer components {
   .main-container {
-    @apply 
-    /* border-4 border-solid border-blue-600 */
+    @apply /* border-4 border-solid border-blue-600 */
 		flex flex-col justify-start items-center
 		relative
 		w-full h-fit;
@@ -121,16 +120,18 @@ body {
 		md:hidden;
   }
 
+  /* MODAL */
   .mobile-nav-modal {
-    @apply /* border-2 border-solid border-yellow-600 */
-		flex flex-col justify-center items-center
-		fixed
+    @apply /* border-4 border-solid border-yellow-600 */
+		flex flex-col justify-evenly items-center
+		bg-black/60
 		w-full h-full
-		bg-slate-700
 		text-white
-		text-5xl
-		gap-12
-		z-40;
+		text-3xl
+		fixed
+		z-40
+    pt-20;
+    backdrop-filter: blur(8px);
   }
 }
 
@@ -141,81 +142,53 @@ body {
 		flex justify-center items-center
     shrink-0
     relative
-	/* bg-slate-900 */
 		text-center
-		text-white
-    p-2
-    
-    md:p-6;
+		text-white;
 
     width: 100%;
     height: calc(100vh - 80px);
     min-width: 400px;
-    min-height: 650px;
+    min-height: 570px;
   }
   .hero-content {
     @apply /* border-4 border-white border-dotted */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
-    gap-4
-
-    md:p-6
-    md:flex-row;
+    gap-4;
   }
-  .hero-title {
-    @apply /* border-[1px] border-dashed border-white/50 */
-		flex flex-col justify-center items-center
-		text-3xl
-		w-full h-fit
+  .hero-image {
+    @apply /* border-2 border-solid border-white */
+    flex justify-center items-center
+    w-full h-[200px]
+    relative
     
-    md:items-start
-    md:text-4xl
-    lg:text-6xl;
+    sm:h-[300px]
+    lg:h-[400px];
   }
   .hero-text {
     @apply /* border-[1px] border-dashed border-white/50 */
-		flex flex-row justify-center items-center
-		text-lg
-		w-full h-fit;
-  }
-  .hero-3d {
-    @apply 
-    /* border-[1px] border-dashed border-white/50 */
     flex justify-center items-center
-    overflow-hidden
-    absolute
-    object-cover
-    top-0 left-0 -z-10
-    w-full h-full;
-  }
-  .hero-text-lg {
-    @apply /* border-[1px] border-dashed border-white/90 */
-		w-full h-fit
-		text-2xl
-    hidden
+    w-full h-fit
+    text-2xl
 
-    md:flex 
-    md:flex-row 
-    md:justify-start 
-    md:items-start;
+    sm:text-4xl
+    lg:text-5xl;
   }
 }
 
 /* Service Page */
 @layer components {
   .services-container {
-    @apply 
-    /* border-4 border-dotted border-yellow-500 */
+    @apply /* border-4 border-dotted border-yellow-500 */
 		flex flex-col justify-center items-center
     relative
     w-full h-screen
     shrink-0
 		bg-amber-800
-		text-white
-    p-2
-    
-    md:p-6;
+		text-white   
+
+    md:px-6;
 
     height: 100vh;
     max-width: 100%;
@@ -224,39 +197,35 @@ body {
   }
   .services-bg {
     @apply bg-black/50
-		w-1/2 h-full
+		w-full md:w-1/2 h-full
 		absolute
 		top-0 left-0;
     backdrop-filter: blur(8px);
   }
 
   .services-content {
-    @apply /* border-4 border-solid border-red-600 */
+    @apply /* border-2 border-solid border-red-600 */
 		flex flex-col justify-center items-center
 		w-full h-full
     max-w-[1300px]
-		gap-2 pt-20;
+		pt-24 pb-2 md:pb-4;
   }
   .services-header {
     @apply /* border-[1px] border-dotted border-white/50 */
 		flex flex-row justify-center items-center
 		w-full h-fit
 		py-2
-		text-4xl
-    
-    md:justify-start;
+		text-4xl;
   }
   .services-card {
-    @apply 
-    /* border-[1px] border-dashed border-white */
+    @apply /* border-[1px] border-dashed border-white */
 		flex justify-center items-center
     relative
 		px-1 gap-2
 		w-full h-full;
   }
   .services-grid {
-    @apply 
-    /* border-solid border-2 border-purple-500 */
+    @apply /* border-solid border-2 border-purple-500 */
     w-[150px]
     shrink-0
     absolute
@@ -280,7 +249,7 @@ body {
   }
   .services-arrow {
     @apply /* border-2 border-blue-600 border-solid */
-    h-[100px] w-[50px]
+    h-[300px] w-[50px]
     relative
     
     md:hidden;
@@ -290,16 +259,18 @@ body {
 /* Service Card */
 @layer components {
   .servcard-container {
-    @apply 
-    /* border-2 border-dashed border-green-600 */
+    @apply /* border-2 border-dashed border-green-600 */
 		flex flex-col justify-start items-center
-		w-full h-fit
+		w-full h-full
     max-w-[350px]
     min-h-[440px]
+    bg-gray-950
+    rounded-lg
 		gap-2
 		relative
-		bg-teal-900
-		py-2 px-3;
+		py-2 px-3
+    drop-shadow-[0_5px_10px_rgba(255,255,255,0.75)];
+    box-shadow: 0px 0px 10px white inset;
   }
   .servcard-title {
     @apply flex justify-center items-center
@@ -308,39 +279,20 @@ body {
 		text-2xl;
   }
   .servcard-image {
-    @apply border-2 border-solid border-white
-		bg-amber-800
+    @apply /* border-2 border-solid border-white */
 		flex justify-center items-center
+    rounded-lg
+    overflow-hidden
 		relative
 		shrink-0
 		w-full h-[200px];
-  }
-  .servcard-footer {
-    @apply /* border-2 border-solid border-red-600 */
-		flex flex-col justify-between items-center
-		w-full h-fit
-		gap-4
-		pb-2
-		relative;
   }
   .servcard-desc {
     @apply /* border-[1px] border-dashed border-white/50 */
 		relative
     text-sm
 		w-full h-full
-    max-h-[185px]
     overflow-auto;
-  }
-  .servcard-btns {
-    @apply /* border-2 border-solid border-white */
-		flex flex-row justify-between items-center
-		relative
-		gap-2
-		w-full h-fit;
-  }
-  .progress-line {
-    @apply w-full h-[2px]
-		bg-gray-100/20;
   }
 }
 
@@ -350,7 +302,7 @@ body {
     @apply /* border-4 border-solid border-white */
     flex justify-center items-center
     shrink-0
-		/* bg-yellow-900 */
+		bg-black/50
 		text-white
 		relative
 		p-2
@@ -361,13 +313,12 @@ body {
     min-height: 650px;
   }
   .team-content {
-    @apply 
-    /* border-4 border-dotted border-red-300 */
+    @apply /* border-4 border-dotted border-red-300 */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
     pt-20
-    gap-8;
+    gap-4;
   }
   .team-title {
     @apply border-b-2 border-solid border-white
@@ -379,8 +330,7 @@ body {
     lg:text-5xl;
   }
   .team-body {
-    @apply 
-    /* border-2 border-pink-600 border-solid */
+    @apply /* border-2 border-pink-600 border-solid */
     flex justify-center items-center gap-4
     relative
     w-full h-[80%]
@@ -391,16 +341,14 @@ body {
 /* Team Member Display */
 @layer components {
   .team-image-lg {
-    @apply 
-    /* border-2 border-solid border-white */
+    @apply /* border-2 border-solid border-white */
     hidden
-    w-[300px] h-full
+    w-2/5 h-full
     relative
     md:flex md:flex-col md:justify-center md:items-center;
   }
   .team-image-sm {
-    @apply 
-    border-2 border-solid border-white
+    @apply /* border-2 border-solid border-white */
     flex justify-center items-center
     w-[70px] h-[70px]
     rounded-full
@@ -409,16 +357,15 @@ body {
     md:hidden;
   }
   .team-display-container {
-    @apply 
-    /* border-2 border-solid border-white */
+    @apply /* border-2 border-solid border-white */
     flex flex-col justify-center items-center
-    w-fit h-full
-    gap-4;
+    w-full h-full
+    gap-2 md:w-3/5;
   }
   .member-name-container {
     @apply flex justify-center items-center
     /* border-2 border-dotted border-blue-400 */
-    w-[200px] h-[80px]
+    w-[300px] h-[90px]
     relative;
   }
   .member-name {
@@ -431,15 +378,16 @@ body {
   .member-desc-container {
     @apply flex flex-col justify-start items-center
     /* border-2 border-dotted border-green-400 */
-    w-[300px] h-[400px]
+    w-full h-full
     relative
     gap-4;
   }
 
   .member-desc {
     @apply /* border-2 border-solid border-white */
-    flex justify-center items-center
+    flex flex-col justify-center items-start
     absolute
+    px-4 md:px-0
     w-full h-fit;
   }
 }
@@ -472,11 +420,10 @@ body {
 /* Reviews Page */
 @layer components {
   .reviews-container {
-    @apply 
-    /* border-4 border-solid border-white */
+    @apply /* border-4 border-solid border-white */
     flex flex-col justify-center items-center
     shrink-0
-    /* bg-pink-900/40 */
+    bg-black/70
     text-white
     relative
     p-4
@@ -487,8 +434,7 @@ body {
     min-height: 650px;
   }
   .reviews-content {
-    @apply 
-    /* border-4 border-dotted border-red-300 */
+    @apply /* border-4 border-dotted border-red-300 */
     flex flex-col justify-center items-center
     w-full h-full
     max-w-[1300px]
@@ -505,15 +451,13 @@ body {
     lg:text-5xl;
   }
   .reviews-card-container {
-    @apply 
-    /* border-2 border-solid border-white */
+    @apply /* border-2 border-solid border-white */
     flex flex-row justify-start items-start gap-x-2
     overflow-x-scroll
     w-full h-fit py-2;
   }
   .review-card {
-    @apply 
-    /* border-2 border-solid border-white */
+    @apply /* border-2 border-solid border-white */
     flex flex-col justify-start items-center
     w-[300px] h-[200px] m-0
     bg-white
@@ -524,30 +468,25 @@ body {
     p-2 gap-2;
   }
   .review-header {
-    @apply 
-    /* border-2 border-dotted border-blue-400 */
+    @apply /* border-2 border-dotted border-blue-400 */
     flex flex-row justify-start items-center
     w-full h-fit
     gap-2;
   }
   .review-stars {
-    @apply 
-    /* border-2 border-dotted border-red-400 */
+    @apply /* border-2 border-dotted border-red-400 */
     flex flex-row justify-start items-center
     w-full h-fit text-xs
     gap-1;
-  
   }
   .review-body {
-    @apply 
-    /* border-2 border-dotted border-green-400 */
+    @apply /* border-2 border-dotted border-green-400 */
     flex flex-col justify-start items-center
     w-full h-full overflow-auto
     gap-2;
   }
   .gallery-images-container {
-    @apply 
-    /* border-2 border-solid border-white */
+    @apply /* border-2 border-solid border-white */
     flex flex-row justify-start items-start gap-x-2
     relative
     overflow-x-scroll
@@ -561,5 +500,41 @@ body {
     shrink-0
     overflow-hidden
     rounded-lg;
+  }
+}
+
+/* Footer Styling */
+@layer components {
+  .footer-container {
+    @apply 
+    /* border-4 border-solid border-white */
+    flex flex-col justify-start items-center
+    shrink-0
+    bg-black
+    text-white
+    relative
+    p-2
+    w-full h-fit
+    
+    md:p-6;
+    min-width: 400px;
+  }
+  .footer-title {
+    @apply flex justify-center items-center
+    border-solid border-b-[1px] border-white
+    text-2xl h-fit w-full;
+  }
+  .footer-list {
+    @apply 
+    /* border-solid border-white border-2 */
+    flex flex-col justify-center items-center
+    w-full h-fit 
+    text-base 
+    gap-2 pt-2;
+  }
+  .f-list-item {
+    @apply flex justify-center items-center
+    gap-2
+    w-full h-fit;
   }
 }

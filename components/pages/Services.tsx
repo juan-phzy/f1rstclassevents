@@ -4,26 +4,33 @@ import Image from "next/image";
 import ServiceCard from "../cards/ServiceCard";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useState } from "react";
-import { servicesArray, servicesObj } from "@/constants";
 
-const Services = () => {
-  const [chosenService, setChosenService] = useState("dj");
+
+interface Props {
+  title: string;
+  sArray: string[];
+  sObj: { [key: string]: { title: string; desc: string } };
+}
+
+const Services = ({sArray,sObj, title}:Props) => {
+  const initialService = sArray[0];
+  const [chosenService, setChosenService] = useState(initialService);
 
   const goLeft = () => {
-    const index = servicesArray.indexOf(chosenService);
+    const index = sArray.indexOf(chosenService);
     if (index === 0) {
-      setChosenService(servicesArray[servicesArray.length - 1]);
+      setChosenService(sArray[sArray.length - 1]);
     } else {
-      setChosenService(servicesArray[index - 1]);
+      setChosenService(sArray[index - 1]);
     }
   };
 
   const goRight = () => {
-    const index = servicesArray.indexOf(chosenService);
-    if (index === servicesArray.length - 1) {
-      setChosenService(servicesArray[0]);
+    const index = sArray.indexOf(chosenService);
+    if (index === sArray.length - 1) {
+      setChosenService(sArray[0]);
     } else {
-      setChosenService(servicesArray[index + 1]);
+      setChosenService(sArray[index + 1]);
     }
   };
 
@@ -40,10 +47,13 @@ const Services = () => {
       <div className="services-bg z-10"></div>
 
       <div className="services-content z-20">
-        <div className="services-header">Services</div>
+
+        <div className="services-header">{title}</div>
+
         <div className="services-card">
+
           <div className="services-grid">
-            {servicesArray.map((service: string) => {
+            {sArray.map((service: string) => {
               return (
                 <button
                   key={service}
@@ -52,7 +62,7 @@ const Services = () => {
                     service === chosenService && "text-white bg-white/30"
                   }`}
                 >
-                  {servicesObj[service].title}
+                  {sObj[service].title}
                 </button>
               );
             })}
@@ -62,7 +72,7 @@ const Services = () => {
             <BsChevronLeft className="w-full h-full" />
           </button>
 
-          <ServiceCard serv={chosenService} />
+          <ServiceCard serv={chosenService} sObj={sObj} />
 
           <button onClick={goRight} className="services-arrow">
             <BsChevronRight className="w-full h-full" />

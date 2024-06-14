@@ -9,6 +9,9 @@ import NavBar from "@/components/shared/NavBar";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import ReviewsPage from "@/components/pages/ReviewsPage";
+import Footer from "@/components/pages/Footer";
+import { eventsArray, eventsObj, servicesArray, servicesObj } from "@/constants";
+
 
 export default function Home() {
   useEffect(() => {
@@ -27,10 +30,12 @@ export default function Home() {
       <BlurNavBar />
       <NavBar />
       <HeroPage />
-      <Services />
+      <Services title="Services" sArray={servicesArray} sObj={servicesObj} />
+      <Services title="Events" sArray={eventsArray} sObj={eventsObj} />
       <TeamPage />
       <BookingsPage />
       <ReviewsPage />
+      <Footer />
     </main>
   );
 }
