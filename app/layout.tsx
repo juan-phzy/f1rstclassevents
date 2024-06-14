@@ -22,8 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={pd.className}>
-        <div className="main-background">
-          <video  autoPlay loop muted className="bg-video pointer-events-none">
+        <div className="main-background pointer-events-none">
+          <video  autoPlay loop muted className="bg-video">
             <source src="/videos/bg-vid.mp4" type="video/mp4" />
           </video>
         </div>
