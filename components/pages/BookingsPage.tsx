@@ -8,7 +8,7 @@ const BookingsPage = () => {
         <iframe
 					className="bg-white rounded-2xl"
 					title="BookingForm"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdxCPGxLEsPOYwLj8Sr939359cYnTg4Pk-dL-ENwKsT8bAQZQ/viewform?embedded=true"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeGdrzlbhS2yO_jSACCceW2M__9gT3iA4ys4d0jy8tNYxbsig/viewform?embedded=true"
           width="85%"
           height="95%"
         >
