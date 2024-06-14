@@ -102,11 +102,12 @@ body {
 		w-[150px] h-[80px];
   }
   .nav-link-container {
-    @apply /* border-2 border-solid border-white */
+    @apply 
+    /* border-2 border-solid border-white */
 		w-fit h-full
 		text-white
-		text-2xl
-		gap-6
+		text-lg lg:text-xl xl:text-2xl
+		gap-4
 		max-[768px]:hidden
 		md:flex flex-row justify-center items-center;
   }
@@ -522,7 +523,7 @@ body {
   .footer-title {
     @apply flex justify-center items-center
     border-solid border-b-[1px] border-white
-    text-2xl h-fit w-full;
+    text-2xl md:text-3xl h-fit w-full;
   }
   .footer-list {
     @apply 
@@ -530,11 +531,13 @@ body {
     flex flex-col justify-center items-center
     w-full h-fit 
     text-base 
+    md:text-lg
     gap-2 pt-2;
   }
   .f-list-item {
     @apply flex justify-center items-center
     gap-2
-    w-full h-fit;
+    w-full h-fit
+    hover:bg-white/20;
   }
 }
